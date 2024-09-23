@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Hugeamount
   def huge?(horsepower)
     horsepower > 400
@@ -7,6 +9,7 @@ end
 class Vehicle
   attr_accessor :color
   attr_reader :model, :year
+
   @@number_of_vehicles = 0
 
   def self.number_of_vehicles
@@ -41,7 +44,7 @@ class Vehicle
 
   def shut_down
     @current_speed = 0
-    puts "Put this car at rest my friend!"
+    puts 'Put this car at rest my friend!'
   end
 
   def spray_paint(color)
@@ -53,19 +56,18 @@ end
 class MyTruck < Vehicle
   include Hugeamount
 
-   HORSEPOWER = 400
+  HORSEPOWER = 400
 
   def to_s
-    "My truck  is a #{self.color}, #{self.year}, #{self.model}!"
+    "My truck  is a #{color}, #{year}, #{model}!"
   end
 end
 
 class MyCar < Vehicle
-  
   HORSEPOWER = 150
 
   def to_s
-    "My car is a #{self.color}, #{self.year}, #{self.model}!"
+    "My car is a #{color}, #{year}, #{model}!"
   end
 end
 
@@ -80,7 +82,7 @@ lumina.brake(20)
 lumina.current_speed
 lumina.shut_down
 MyCar.gas_mileage(13, 351)
-lumina.spray_paint("red")
+lumina.spray_paint('red')
 puts lumina
 puts MyCar.ancestors
 puts MyTruck.ancestors
